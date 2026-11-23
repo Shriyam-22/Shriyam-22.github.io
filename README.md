@@ -2,6 +2,10 @@
 
 A cinematic, editorial portfolio for Shriyam, AI engineer. Built with React, TypeScript and Vite, with GSAP + ScrollTrigger and Framer Motion.
 
+## Live site
+
+Every push to `main` builds and deploys the site to GitHub Pages (`.github/workflows/deploy.yml`).
+
 ## Run it
 
 ```bash
