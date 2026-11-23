@@ -1,0 +1,33 @@
+.footer {
+  background: var(--ink);
+  padding: 3rem var(--pad) 1.5rem;
+  overflow: hidden;
+}
+.footer__name {
+  margin: 0 0 1.5rem;
+  font-size: 23vw;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(239, 233, 220, 0.25);
+  text-align: center;
+  user-select: none;
+}
+.footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ivory-dim);
+}
+.footer__row a {
+  text-decoration: none;
+}
+.footer__row a:hover {
+  color: var(--ivory);
+}
+.footer__links {
+  display: flex;
+  gap: 1.5rem;
+}

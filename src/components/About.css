@@ -1,0 +1,66 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.about__lede {
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+  line-height: 1.45;
+  max-width: 38ch;
+}
+.about__lede p {
+  margin: 0 0 1.1em;
+}
+.about__lede p + p {
+  color: var(--ivory-dim);
+}
+.about__dropcap::first-letter {
+  float: left;
+  font-family: var(--display);
+  font-weight: 800;
+  font-stretch: 70%;
+  font-size: 4.9em;
+  line-height: 0.78;
+  margin: 0.06em 0.12em 0 0;
+  color: var(--yellow);
+}
+
+.about__sheet dl {
+  margin: 0;
+  border-top: 1px solid var(--ivory);
+}
+.about__sheet dl > div {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.about__sheet dt {
+  color: var(--ivory-dim);
+  padding-top: 0.25rem;
+}
+.about__sheet dd {
+  margin: 0;
+}
+.about__approach {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.about__approach li::marker {
+  font-family: var(--mono);
+  font-size: 0.8em;
+  color: var(--red);
+}
+
+@media (max-width: 860px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+  .about__sheet dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}

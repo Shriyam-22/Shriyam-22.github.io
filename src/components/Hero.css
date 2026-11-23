@@ -1,0 +1,248 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 5.2rem var(--pad) 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 78% 70%, rgba(242, 194, 48, 0.07), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 10%, rgba(91, 124, 255, 0.05), transparent 70%), var(--ink);
+}
+
+[data-hero-hidden] {
+  visibility: hidden;
+}
+
+.hero__top {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr);
+  column-gap: clamp(1.5rem, 4vw, 4rem);
+}
+.hero__top > .rule,
+.hero__meta {
+  grid-column: 1 / -1;
+}
+
+.hero__meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  color: var(--ivory-dim);
+}
+.hero__capline {
+  margin: 0;
+  overflow: hidden;
+}
+.hero__capline--right {
+  text-align: right;
+}
+.hero__cap {
+  display: inline-block;
+}
+.hero__live {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.35rem;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 0 0 rgba(242, 194, 48, 0.6);
+  animation: pulse 2.4s ease-out infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(242, 194, 48, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(242, 194, 48, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 194, 48, 0);
+  }
+}
+
+.hero__thesis {
+  margin: clamp(1.4rem, 3vw, 2.6rem) 0 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5.2vw, 5.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+.hero__thesis em {
+  font-style: italic;
+}
+
+.hero__notes {
+  align-self: end;
+  display: grid;
+  gap: 1.1rem;
+  padding-bottom: 0.4rem;
+  color: var(--ivory-dim);
+  font-size: 0.98rem;
+  max-width: 34ch;
+}
+.hero__note {
+  margin: 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.6rem;
+}
+.hero__note-label {
+  display: block;
+  color: var(--yellow);
+  margin-bottom: 0.25rem;
+}
+
+/* --- name + portrait composition --- */
+.hero__stage {
+  position: relative;
+  min-height: clamp(260px, 36vw, 560px);
+  margin: 0 calc(var(--pad) * -1);
+}
+
+.hero__name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.02em;
+  display: flex;
+  justify-content: center;
+  font-family: var(--display);
+  font-weight: 800;
+  font-stretch: 68%;
+  font-size: 26vw;
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+.hero__name--fill {
+  z-index: 1;
+  color: var(--ivory);
+}
+.hero__name--line {
+  z-index: 3;
+  -webkit-text-stroke: max(1px, 0.13vw) var(--ivory);
+}
+.hero__letter-mask {
+  display: inline-block;
+  overflow: hidden;
+  padding-top: 0.04em;
+}
+.hero__letter {
+  display: inline-block;
+}
+
+.hero__figure {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  right: 12vw;
+  bottom: 2vw;
+  width: clamp(170px, 21vw, 330px);
+}
+.hero__frame {
+  position: relative;
+  aspect-ratio: 660 / 942;
+  overflow: hidden;
+  border-radius: 999px 999px 0 0;
+  background: var(--ink-3);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+}
+.hero__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.12) brightness(0.92);
+  transform-origin: 50% 30%;
+}
+/* warm duotone wash over the greyscale portrait */
+.hero__frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(242, 194, 48, 0) 40%, rgba(226, 69, 46, 0.28) 100%);
+  mix-blend-mode: soft-light;
+}
+
+.hero__figcap {
+  position: absolute;
+  top: 18%;
+  right: calc(100% + 5.5rem);
+  white-space: nowrap;
+  color: var(--ivory-dim);
+}
+.hero__annot {
+  position: absolute;
+  top: calc(18% + 0.9rem);
+  right: calc(100% - 1.2rem);
+  width: 6.8rem;
+  overflow: visible;
+  fill: none;
+  stroke: var(--yellow);
+  stroke-width: 1.1;
+}
+.hero__annot circle {
+  fill: var(--yellow);
+  stroke: none;
+}
+.hero__annot {
+  transform: scaleY(-1);
+}
+
+.hero__scroll {
+  text-decoration: none;
+  color: var(--ivory);
+}
+.hero__scroll:hover {
+  color: var(--yellow);
+}
+
+@media (max-width: 860px) {
+  .hero__top {
+    grid-template-columns: 1fr;
+  }
+  .hero__meta {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero__meta > :nth-child(3) {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+  .hero__notes {
+    margin-top: 1.4rem;
+    max-width: 60%;
+  }
+  .hero__stage {
+    min-height: 74vw;
+  }
+  .hero__figure {
+    right: 5vw;
+    width: 44vw;
+    bottom: 3vw;
+  }
+  .hero__figcap,
+  .hero__annot {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero__notes {
+    max-width: 100%;
+  }
+  .hero__notes .hero__note:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__live {
+    animation: none;
+  }
+}

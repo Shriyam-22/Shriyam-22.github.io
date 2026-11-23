@@ -1,0 +1,128 @@
+.xp {
+  background: var(--ink-2);
+}
+
+.xp__list {
+  position: relative;
+}
+.xp__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.xp__spine {
+  position: absolute;
+  left: 13.2rem;
+  top: 0.5rem;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(var(--yellow), var(--red));
+  transform-origin: top center;
+}
+
+.xp__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: 2.5rem;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+.xp__item::before {
+  content: '';
+  position: absolute;
+  left: calc(13.2rem - 5px);
+  top: 0.45rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--ink-2);
+  border: 1px solid var(--yellow);
+}
+.xp__dates {
+  margin: 0.25rem 0 0;
+  color: var(--ivory-dim);
+}
+.xp__main {
+  padding-left: 1rem;
+}
+.xp__org {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+}
+.xp__role {
+  margin: 0.4rem 0 1.2rem;
+  font-style: italic;
+  color: var(--yellow);
+  font-size: 1.2rem;
+}
+.xp__points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+  max-width: 70ch;
+}
+.xp__points li {
+  padding-left: 1.4rem;
+  position: relative;
+  color: var(--ivory-dim);
+}
+.xp__points li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  font-family: var(--mono);
+  font-size: 0.8em;
+  top: 0.15em;
+  color: var(--red);
+}
+
+.xp__foot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  border-top: 1px solid var(--ivory);
+  padding-top: 2rem;
+}
+.xp__foot-title {
+  margin: 0 0 1rem;
+  font-weight: 400;
+  color: var(--yellow);
+}
+.xp__school {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  line-height: 0.95;
+}
+.xp__edu p:last-child {
+  margin: 0;
+  color: var(--ivory-dim);
+}
+.xp__ach ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--ivory-dim);
+}
+
+@media (max-width: 860px) {
+  .xp__item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding-left: 1.6rem;
+  }
+  .xp__spine {
+    left: 0.3rem;
+  }
+  .xp__item::before {
+    left: calc(0.3rem - 5px);
+  }
+  .xp__main {
+    padding-left: 0;
+  }
+  .xp__foot {
+    grid-template-columns: 1fr;
+  }
+}
