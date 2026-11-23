@@ -18,7 +18,7 @@ export const person = {
   portrait,
   portraitAlt: 'Portrait of Shriyam in a navy blazer and light blue shirt, standing against a textured grey wall',
   // From the GitHub profile README ("$ whoami")
-  thesis: 'I build AI products that hold up outside the demo.',
+  thesis: 'I build AI products that hold up in the real world.',
   intro:
     "LLM agents with real tools, guardrails that check the model's work in code, and eval suites that say whether a change made things better or worse. I also ship the software around them, from REST APIs and databases to the interface people actually use.",
   background:

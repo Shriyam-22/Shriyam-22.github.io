@@ -91,12 +91,12 @@ export function Hero() {
           </span>
           <span className="reveal-line">
             <span>
-              that hold up <em className="marker">outside</em>
+              that hold up <em className="marker">in the</em>
             </span>
           </span>
           <span className="reveal-line">
             <span>
-              <em className="marker">the demo.</em>
+              <em className="marker">real world.</em>
             </span>
           </span>
         </h1>
